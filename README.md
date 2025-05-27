@@ -7,6 +7,6 @@ https://final-project-dbms-software-1.onrender.com
 
 Login Account:
 
-username: evan
+username: Evan
 
 password: evanjean23
