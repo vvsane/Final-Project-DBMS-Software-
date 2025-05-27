@@ -1,0 +1,297 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-title {
+    text-align: center;
+    margin-top: 20px;
+    color: #2c3e50;
+}
+
+.card {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    max-width: 800px;
+}
+
+.card h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+.card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+/* Attendance */
+.attendance {
+    list-style: none;
+    padding-left: 0;
+}
+
+.attendance li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #6c63ff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #574fd6;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
+
+.btn-danger {
+    background-color: #ff4d4d;
+}
+
+.btn-danger:hover {
+    background-color: #e60000;
+}
+
+/* Events */
+.event {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align top */
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    gap: 10px;
+}
+
+.event-info {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+}
+
+.event-title {
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 4px;
+}
+
+.event-date {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+.icon {
+    margin-right: 10px;
+    color: #e91e63; /* pink pin */
+    font-size: 18px;
+}
+
+/* Admin */
+.event-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.event-actions {
+    display: flex;
+    flex-direction: column; /* Stack Edit and Delete vertically */
+    align-items: flex-end;  /* Align to the right */
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.event-description {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 5px;
+    white-space: pre-wrap; /* Preserves line breaks */
+}
+
+.edit-link {
+    color: #2980b9;
+}
+
+.delete-link {
+    color: #e74c3c;
+}
+
+.edit-link:hover,
+.delete-link:hover {
+    text-decoration: underline;
+    text-align: right;
+}
+
+.edit-link,
+.delete-link {
+    display: block;
+    text-align: right;
+}
+
+/* Fees */
+.fee-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.fee-list li {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.fee-actions {
+    display: flex;
+    flex-direction: column; /* Stack Edit and Delete vertically */
+    align-items: flex-end;  /* Align to the right */
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.add-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #5c6bc0;
+    font-weight: bold;
+}
+
+.add-link:hover {
+    text-decoration: underline;
+}
+
+.edit-link {
+    color: #2980b9;
+}
+
+.delete-link {
+    color: #e74c3c;
+}
+
+.edit-link:hover,
+.delete-link:hover {
+    text-decoration: underline;
+    text-align: right;
+}
+
+.edit-link,
+.delete-link {
+    display: block;
+    text-align: right;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c6bc0;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #3949ab;
+    transform: scale(1.03);
+}
+
+.event-section {
+    margin-top: 20px;
+}
+
+.event-title {
+    margin-bottom: 10px;
+    color: #34495e;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cancel {
+    margin-left: 10px;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-cancel:hover {
+    text-decoration: underline;
+}
+

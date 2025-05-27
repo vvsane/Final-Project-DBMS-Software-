@@ -1,0 +1,15 @@
+<!-- templates/core/form_template.html -->
+{% extends 'core/base.html' %}
+{% block content %}
+<h1 class="dashboard-title">{{ title }}</h1>
+
+<div class="card">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn">💾 Save</button>
+        <a href="{% url cancel_url %}" class="btn-cancel">Cancel</a>
+    </form>
+</div>
+{% endblock %}

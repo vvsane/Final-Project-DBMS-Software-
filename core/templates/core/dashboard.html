@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1 class="dashboard-title">Welcome, {{ username }}!</h1>
+
+  <!-- 📅 Events Card -->
+  <div class="card">
+      <h2>📅 Event Overview</h2>
+      <ul id="eventList">
+          {% for event in events %}
+              <li>
+                <span><strong>Event:</strong> {{ event.title }}</span><br>
+                <span><strong>Description:</strong> {{ event.description }}</span><br>
+                <span><strong>Date and Time:</strong> {{ event.date }}</span><br>
+                <span><strong>Location:</strong> {{ event.location }}</span><br>
+                <span><strong>Event Status:</strong> {{ event.get_status_display }}</span>
+              </li>
+          {% empty %}
+              <li>No events available.</li>
+          {% endfor %}
+      </ul>
+  </div>
+
+  <!-- ✅ Stats Card -->
+  <div class="card">
+      <h2>📊 Status</h2>
+      <ul>
+          <li><span class="icon">👥</span> <strong>Total Attendances:</strong> {{ attendances }}</li>
+          <li><span class="icon">💸</span> <strong>Total Fee Records:</strong> {{ fees }}</li>
+      </ul>
+  </div>
+{% endblock %}
+
+

@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="dashboard-title">Events</h1>
+
+<div class="card">
+    {% if is_admin %}
+    <a href="{% url 'event_create' %}" class="btn">➕ Add Event</a>
+    {% endif %}
+
+    <ul class="event">
+        {% for event in events %}
+        <li class="event-item">
+          <div class="event-left">
+            <span class="icon">📍</span>
+            <div class="event-info">
+              <span class="event-title">{{ event.title }} – {{ event.description }}</span>
+               
+              {% if event.image %}
+                <img src="{{ event.image.url }}" alt="{{ event.title }}" style="max-width: 200px;">
+              {% else %}
+                <p><em>No image provided</em></p>
+              {% endif %}
+
+              <span class="event-date">{{ event.date|date:"F j, Y, g:i a" }} – {{ event.location }}</span>
+              <span class="event-status">{{ event.get_status_display }}</span>  
+            </div>
+          </div>
+          {% if is_admin %}
+          <div class="event-actions">
+            <a href="{% url 'event_update' event.pk %}" class="btn btn-sm">✏️ Edit</a>
+            <a href="{% url 'event_delete' event.pk %}" class="btn btn-sm btn-danger">🗑️ Delete</a>
+          </div>
+          {% endif %}
+        </li>                       
+        {% empty %}
+            <li>No events found.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+

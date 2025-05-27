@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="dashboard-title">Attendance Records</h1>
+
+<div class="card">
+    {% if is_admin %}
+        <a href="{% url 'attendance_mark' %}" class="btn">➕ Mark Attendance</a>
+        <ul class="attendance">
+            {% for event, records in grouped_records %}
+                <li><h3>{{ event.title }} ({{ event.date|date:"F d, Y" }})</h3>
+                    <ul>
+                        {% for record in records %}
+                            <li>
+                                <strong>{{ record.user.username }}</strong> —
+                                {% if record.attended %}
+                                    ✅ Present
+                                {% else %}
+                                    ❌ Absent
+                                {% endif %}
+                                <a href="{% url 'attendance_edit' record.pk %}" class="btn btn-sm">✏️ Edit</a>
+                                <a href="{% url 'attendance_delete' record.pk %}" class="btn btn-sm btn-danger">🗑️ Delete</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <ul class="attendance">
+            {% for record in records %}
+                <li>
+                    <strong>{{ record.event.title }}</strong> —
+                    {% if record.attended %}
+                        ✅ Present
+                    {% else %}
+                        ❌ Absent
+                    {% endif %}
+                </li>
+            {% empty %}
+                <li>No attendance records found.</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}

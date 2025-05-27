@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1 class="dashboard-title">{% if form.instance.pk %}Edit Fee{% else %}Add Fee{% endif %}</h1>
+
+<div class="card">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-sm">💾 Save</button>
+        <a href="{% url 'fees' %}" class="btn btn-sm btn-danger">Cancel</a>
+    </form>
+</div>
+{% endblock %}
