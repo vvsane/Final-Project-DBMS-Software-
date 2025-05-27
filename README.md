@@ -1,0 +1,10 @@
+**Barangay Attendance & Event Management System**
+
+Deployed URL:
+https://final-project-dbms-software-1.onrender.com
+
+Login Account:
+
+username: mr.levi
+
+password: corvera_123
